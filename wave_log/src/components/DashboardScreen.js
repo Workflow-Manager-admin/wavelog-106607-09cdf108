@@ -184,23 +184,46 @@ function DashboardScreen({ sessions, goHome }) {
           <div className="chart-title">Mood Over Time</div>
           {sessions.length === 0 ? <div>No data</div> :
             <svg width="100%" height="65" style={{ background: "#1a6093cc", borderRadius: 9 }}>
-              {sessions.slice(0, 12).map((s, i) => (
-                <text
-                  x={18 + i * 28} y="40"
-                  fontSize="2.2em"
-                  key={s.id}
-                  fill="#fff"
-                  stroke="#225c97"
-                  strokeWidth="0.5"
-                  style={{
-                    opacity: 1,
-                    filter: 'drop-shadow(0 2px 8px #157087bb)'
-                  }}
-                  className="svg-dashboard-label"
-                >
-                  {moodEmojis[s.mood] || "▪️"}
-                </text>
-              ))}
+              {sessions.slice(0, 12).map((s, i) => {
+                const x = 18 + i * 28, y = 40;
+                return (
+                  <g key={s.id}>
+                    {/* semi-opaque background for emoji label */}
+                    <rect
+                      x={x - 17}
+                      y={y - 22}
+                      width="34"
+                      height="37"
+                      rx="11"
+                      fill="rgba(15,37,68,0.54)"
+                      filter="url(#mood-label-bg)"
+                    />
+                    <text
+                      x={x}
+                      y={y}
+                      fontSize="2.4em"
+                      fill="#fff"
+                      fontWeight="bold"
+                      stroke="#1de9b6"
+                      strokeWidth="0.6"
+                      style={{
+                        filter: 'drop-shadow(0 2.5px 12px #1de9b7cc) drop-shadow(0 2px 7px #23456944)',
+                        paintOrder: 'stroke'
+                      }}
+                      className="svg-dashboard-label"
+                      dominantBaseline="middle"
+                      textAnchor="middle"
+                    >
+                      {moodEmojis[s.mood] || "▪️"}
+                    </text>
+                  </g>
+                );
+              })}
+              <defs>
+                <filter id="mood-label-bg" x="-40%" y="-40%" width="180%" height="200%">
+                  <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#164575aa" />
+                </filter>
+              </defs>
             </svg>
           }
         </div>
