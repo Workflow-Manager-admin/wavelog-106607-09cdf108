@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { FaHome, FaWater, FaEdit, FaTrash } from "react-icons/fa";
-import { GiSurferVan, GiSurfboard, GiWaveSurfer } from "react-icons/gi";
+import { GiSurferVan, GiWaveSurfer } from "react-icons/gi";
 import { MdOutlineWater, MdOutlineBarChart } from "react-icons/md";
 import { FaSwimmer } from "react-icons/fa";
 import HomeScreen from "./components/HomeScreen";
@@ -77,7 +77,7 @@ function App() {
             <MdOutlineBarChart /> <span className="hide-mobile">Dashboard</span>
           </button>
           <button className="btn nav-btn" onClick={goLog} aria-label="Log new session">
-            <GiSurfboard /> <span className="hide-mobile">Log Session</span>
+            <GiWaveSurfer /> <span className="hide-mobile">Log Session</span>
           </button>
         </div>
       </nav>
@@ -133,7 +133,7 @@ function App() {
 
       <footer className="footer-nav">
         <button className="footer-btn" onClick={goHome}><MdOutlineWater /><div>Home</div></button>
-        <button className="footer-btn" onClick={goLog}><GiSurfboard /><div>Log</div></button>
+        <button className="footer-btn" onClick={goLog}><GiWaveSurfer /><div>Log</div></button>
         <button className="footer-btn" onClick={goDashboard}><MdOutlineBarChart /><div>Dashboard</div></button>
       </footer>
     </div>
