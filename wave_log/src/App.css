@@ -514,12 +514,14 @@ main {
   -webkit-backdrop-filter: blur(13px);
 }
 .chart-title {
-  font-weight: 800;
-  margin-bottom: 14px;
+  font-weight: 900;
+  margin-bottom: 15px;
   text-align: left;
-  color: #184469;
-  letter-spacing: 0.01em;
-  text-shadow: 0 1.5px 6px #fff7, 0 1px 0 #15456518;
+  color: #f5fffa;
+  font-size: 1.21rem;
+  letter-spacing: 0.012em;
+  text-shadow: 0 2.5px 13px #1de9b6cc, 0 1.5px 4px #23456942, 0 1px 0 #3a8dad99;
+  filter: drop-shadow(0 0 3px #185e9540);
 }
 .dashboard-charts {
   display: flex;
