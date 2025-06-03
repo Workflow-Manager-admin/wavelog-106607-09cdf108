@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { FaPlus, FaHome, FaChartPie, FaWater, FaSmile, FaEdit, FaTrash } from "react-icons/fa";
+import { FaHome, FaWater, FaEdit, FaTrash } from "react-icons/fa";
+import { GiSurferVan, GiSurfboard, GiWaveSurfer } from "react-icons/gi";
+import { MdOutlineWater, MdOutlineBarChart } from "react-icons/md";
+import { FaSwimmer } from "react-icons/fa";
 import HomeScreen from "./components/HomeScreen";
 import LogSessionScreen from "./components/LogSessionScreen";
 import SessionDetailScreen from "./components/SessionDetailScreen";
@@ -58,17 +61,23 @@ function App() {
 
   // App main render
   return (
-    <div className="app ocean-bg">
+    <div className={`app ${
+      screen === "home" ? "surf-bg-home"
+      : screen === "dashboard" ? "surf-bg-dashboard"
+      : screen === "log" ? "surf-bg-log"
+      : screen === "detail" ? "surf-bg-detail"
+      : "ocean-bg"
+    }`}>
       <nav className="navbar ocean-nav">
         <div className="logo">
-          <span className="logo-symbol"><FaWater /></span> SurfSync
+          <span className="logo-symbol"><GiWaveSurfer /></span> SurfSync
         </div>
         <div className="nav-actions">
           <button className="btn nav-btn" onClick={goDashboard} aria-label="Stats">
-            <FaChartPie /> <span className="hide-mobile">Dashboard</span>
+            <MdOutlineBarChart /> <span className="hide-mobile">Dashboard</span>
           </button>
           <button className="btn nav-btn" onClick={goLog} aria-label="Log new session">
-            <FaPlus /> <span className="hide-mobile">Log Session</span>
+            <GiSurfboard /> <span className="hide-mobile">Log Session</span>
           </button>
         </div>
       </nav>
@@ -123,9 +132,9 @@ function App() {
       </main>
 
       <footer className="footer-nav">
-        <button className="footer-btn" onClick={goHome}><FaHome /><div>Home</div></button>
-        <button className="footer-btn" onClick={goLog}><FaPlus /><div>Log</div></button>
-        <button className="footer-btn" onClick={goDashboard}><FaChartPie /><div>Dashboard</div></button>
+        <button className="footer-btn" onClick={goHome}><MdOutlineWater /><div>Home</div></button>
+        <button className="footer-btn" onClick={goLog}><GiSurfboard /><div>Log</div></button>
+        <button className="footer-btn" onClick={goDashboard}><MdOutlineBarChart /><div>Dashboard</div></button>
       </footer>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
-import { FaPlus, FaSearch } from "react-icons/fa";
+import { GiSurfboard } from "react-icons/gi";
+import { FaSwimmer } from "react-icons/fa";
 
 // PUBLIC_INTERFACE
 function HomeScreen({
@@ -16,13 +17,13 @@ function HomeScreen({
     setFilter({ spot: "", board: "", mood: "" });
 
   return (
-    <div>
+    <div className="surf-bg-home" style={{ borderRadius: 16, minHeight: "100vh" }}>
       <div className="action-bar">
         <button className="btn" onClick={goLog}>
-          <FaPlus /> Log New Session
+          <GiSurfboard /> Log New Session
         </button>
         <span className="text-faint" style={{ fontSize: "1.07rem" }}>
-          <FaSearch style={{ verticalAlign: -2, marginRight: 3 }} />
+          <FaSwimmer style={{ verticalAlign: -2, marginRight: 3 }} />
           {sessions.length} session{sessions.length !== 1 ? "s" : ""}
         </span>
       </div>
@@ -105,7 +106,7 @@ function HomeScreen({
 export function SessionCard({ session, moods, onClick }) {
   const moodObj = moods.find(m => m.code === session.mood);
   return (
-    <div className="session-card" onClick={onClick} tabIndex={0} role="button" aria-label={`${session.spot} session`} >
+    <div className="session-card surf-glass-card" onClick={onClick} tabIndex={0} role="button" aria-label={`${session.spot} session`} >
       <div className="session-main">
         <div className="spot">{session.spot}</div>
         <div className="session-details-row">

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaArrowLeft } from "react-icons/fa";
+import { GiWaveSurfer } from "react-icons/gi";
 
 // Helper: get most common value in array
 function mostCommon(arr) {
