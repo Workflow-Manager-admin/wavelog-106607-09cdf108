@@ -19,44 +19,52 @@
   padding-bottom: 80px;
 }
 
-/* Surf/Ocean Photography Backgrounds -- tall hero, blend for text/canvas readability */
+/* Surf/Ocean Photography Backgrounds -- updated with copyright-free direct Unsplash surfing/ocean photos and strong overlay for readability */
+
+/* Home Screen (intense in-the-barrel wave, Unsplash) */
 .surf-bg-home {
   min-height: 100vh;
   background: 
-    linear-gradient(180deg, rgba(38,90,116,0.46) 0%, rgba(33,112,152,0.32) 60%, rgba(244,233,216,0.92) 100%),
-    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center top / cover no-repeat;
+    linear-gradient(180deg, rgba(1,39,61,0.60) 0%, rgba(16,89,131,0.35) 60%, rgba(244,233,216,0.92) 100%),
+    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80') center center / cover no-repeat;
   background-attachment: fixed;
   color: var(--text-color);
 }
+
+/* Dashboard Screen (panoramic surfing beach, Unsplash) */
 .surf-bg-dashboard {
   min-height: 100vh;
   background: 
-    linear-gradient(180deg, rgba(26,106,145,0.6) 10%, rgba(255,255,255,0.89) 100%),
-    url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80') center top / cover no-repeat;
+    linear-gradient(180deg, rgba(32,113,185,0.65) 12%, rgba(255,255,255,0.89) 100%),
+    url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80') center top / cover no-repeat;
   background-attachment: fixed;
   color: var(--ocean-dark);
 }
+
+/* Log Session Screen (surfer paddling out, Unsplash) */
 .surf-bg-log {
   min-height: 100vh;
   background:
-    linear-gradient(180deg, rgba(29,233,182,0.36) 0%, rgba(62,184,222,0.39) 55%, rgba(255,255,255,0.95) 110%),
-    url('https://images.unsplash.com/photo-1444065381814-865dc9da92c0?auto=format&fit=crop&w=1200&q=80') center top / cover no-repeat;
+    linear-gradient(182deg, rgba(0,30,43,0.44) 4%, rgba(82,181,216,0.34) 55%, rgba(255,255,255,0.95) 110%),
+    url('https://images.unsplash.com/photo-1465156799763-2c087c332922?auto=format&fit=crop&w=1200&q=80') center top / cover no-repeat;
   background-attachment: fixed;
   color: var(--ocean-dark);
 }
+
+/* Session Detail Screen (silhouette at sunset, Unsplash) */
 .surf-bg-detail {
   min-height: 100vh;
   background:
-    linear-gradient(180deg, rgba(58,141,173,0.48) 12%, rgba(244,233,216,0.95) 80%),
-    url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80') center top / cover no-repeat;
+    linear-gradient(180deg, rgba(43,93,141,0.54) 10%, rgba(249,250,251,0.92) 86%),
+    url('https://images.unsplash.com/photo-1505678261036-a3fcc5e884ee?auto=format&fit=crop&w=1200&q=80') center center / cover no-repeat;
   background-attachment: fixed;
   color: var(--ocean-dark);
 }
 
 /* Ensure cards/popups are readable on busy backgrounds */
 .surf-glass-card, .dashboard-card, .log-session-form, .session-detail-card, .session-card {
-  backdrop-filter: blur(1.5px);
-  background: rgba(245, 251, 255, 0.78);
+  backdrop-filter: blur(2.5px);
+  background: rgba(245, 251, 255, 0.82);
 }
 
 /* For home/hero card */
