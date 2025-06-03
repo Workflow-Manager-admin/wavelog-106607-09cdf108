@@ -25,7 +25,7 @@ function LogSessionScreen({ onSave, onCancel, spots, boards, moods, weatherIcons
   };
 
   return (
-    <form className="log-session-form" onSubmit={handleSubmit}>
+    <form className="log-session-form surf-bg-log" onSubmit={handleSubmit}>
       <div className="form-section">
         <label className="form-label">Date</label>
         <input

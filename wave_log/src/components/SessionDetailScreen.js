@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { FaEdit, FaTrash, FaArrowLeft } from "react-icons/fa";
+import { FaEdit, FaTrash } from "react-icons/fa";
+import { GiSurferVan } from "react-icons/gi";
 
 // PUBLIC_INTERFACE
 function SessionDetailScreen({ session, onBack, onEdit, onDelete, spots, boards, moods, weatherIcons }) {
@@ -32,9 +33,9 @@ function SessionDetailScreen({ session, onBack, onEdit, onDelete, spots, boards,
   };
 
   return (
-    <div className="session-detail-card">
-      <button className="btn" style={{ position: "absolute", left: 15, top: 13, fontSize: "0.93rem" }} onClick={onBack}>
-        <FaArrowLeft /> Back
+    <div className="session-detail-card surf-bg-detail">
+      <button className="btn" style={{ position: "absolute", left: 14, top: 13, fontSize: "1.0rem" }} onClick={onBack}>
+        <GiSurferVan /> Back
       </button>
       {!editing ? (
         <>
