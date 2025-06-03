@@ -502,16 +502,16 @@ main {
 
 /* Dashboard/Charts */
 .dashboard-card {
-  background: linear-gradient(109deg, rgba(245, 251, 255, 0.97) 66%, rgba(210, 238, 251, 0.96) 100%);
-  border-radius: 20px;
-  padding: 38px 27px 28px 27px;
+  background: linear-gradient(109deg, rgba(15, 38, 63, 0.81) 60%, rgba(245, 251, 255, 0.99) 100%);
+  border-radius: 22px;
+  padding: 39px 27px 29px 27px;
   margin: 27px 0 43px 0;
-  color: var(--ocean-dark);
-  box-shadow: 0 6px 30px #1de9b648, 0 2.5px 10px #20668825;
-  text-shadow: 0 1.5px 7px #fff4, 0 1px 0 #23536718;
-  border: 1.5px solid rgba(42,110,160,0.09);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  box-shadow: 0 7px 34px #18526b70, 0 2.5px 13px #2277aa35;
+  text-shadow: 0 2.5px 14px #1de9b699, 0 1.5px 2px #254878aa, 0 1px 0 #23456942;
+  border: 2px solid rgba(42,110,160,0.13);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
 }
 .chart-title {
   font-weight: 800;
@@ -529,9 +529,11 @@ main {
 .dashboard-summary {
   text-align: left;
   margin-bottom: 13px;
-  font-size: 1.14rem;
-  color: #1a6d91;
-  text-shadow: 0 1.5px 6px #fff4, 0 1px 0 #23536712;
+  font-size: 1.16rem;
+  color: #e3fdff;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-shadow: 0 2.5px 13px #154565a2, 0 1.5px 4px #fff8, 0 1.5px 2px #23536992;
 }
 
 /* Misc */
