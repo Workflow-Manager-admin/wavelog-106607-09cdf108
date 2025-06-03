@@ -538,6 +538,29 @@ main {
   text-shadow: 0 2.5px 13px #154565a2, 0 1.5px 4px #fff8, 0 1.5px 2px #23536992;
 }
 
+.svg-dashboard-label {
+  font-family: "Inter", "Roboto", sans-serif;
+  font-size: 1.13rem;
+  font-weight: 700;
+  fill: #fff;
+  paint-order: stroke;
+  stroke: #1779b6;
+  stroke-width: 0.7px;
+  text-shadow: 0 1.5px 8px #257dab90, 0 1.5px 4px #fff, 0 0.5px 1.5px #0a2f46cc;
+  filter: drop-shadow(0 1.5px 4px #1de9b6aa);
+  letter-spacing: 0.01em;
+  dominant-baseline: middle;
+}
+
+.dashboard-legend-label {
+  color: #fff !important;
+  text-shadow: 0 2px 10px #15477a95, 0 1.5px 2.5px #1de9b699, 0 1px 0 #207ba977;
+  font-weight: 700 !important;
+  font-size: 1.04em !important;
+  letter-spacing: 0.01em;
+  padding-left: 1px;
+}
+
 /* Misc */
 ::-webkit-scrollbar {
   width: 7px;
