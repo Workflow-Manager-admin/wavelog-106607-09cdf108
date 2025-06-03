@@ -28,46 +28,44 @@
   padding-bottom: 80px;
 }
 
-/* Surf/Ocean Photography Backgrounds -- updated with copyright-free direct Unsplash surfing/ocean photos and strong overlay for readability */
+/* Surf/Ocean Photography Backgrounds -- improved overlay for maximum text readability and visual */
 
-/* Home Screen (intense in-the-barrel wave, Unsplash) */
 .surf-bg-home {
   min-height: 100vh;
   background: 
-    linear-gradient(180deg, rgba(1,39,61,0.60) 0%, rgba(16,89,131,0.35) 60%, rgba(244,233,216,0.92) 100%),
+    var(--overlay-strong),
     url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80') center center / cover no-repeat;
   background-attachment: fixed;
   color: var(--text-color);
+  /* Ensure text stays readable on all devices */
+  text-shadow: 0 2px 8px rgba(22,48,80,0.60), 0 1px 0 #0003;
 }
-
-/* Dashboard Screen (panoramic surfing beach, Unsplash) */
 .surf-bg-dashboard {
   min-height: 100vh;
   background: 
-    linear-gradient(180deg, rgba(32,113,185,0.65) 12%, rgba(255,255,255,0.89) 100%),
+    var(--overlay-dashboard),
     url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80') center top / cover no-repeat;
   background-attachment: fixed;
   color: var(--ocean-dark);
+  text-shadow: 0 1.5px 6px #fff7, 0 1px 0 #207ba944;
 }
-
-/* Log Session Screen (surfer paddling out, Unsplash) */
 .surf-bg-log {
   min-height: 100vh;
   background:
-    linear-gradient(182deg, rgba(0,30,43,0.44) 4%, rgba(82,181,216,0.34) 55%, rgba(255,255,255,0.95) 110%),
+    var(--overlay-log),
     url('https://images.unsplash.com/photo-1465156799763-2c087c332922?auto=format&fit=crop&w=1200&q=80') center top / cover no-repeat;
   background-attachment: fixed;
   color: var(--ocean-dark);
+  text-shadow: 0 2px 8px #fff3, 0 1px 0 #32556144;
 }
-
-/* Session Detail Screen (silhouette at sunset, Unsplash) */
 .surf-bg-detail {
   min-height: 100vh;
   background:
-    linear-gradient(180deg, rgba(43,93,141,0.54) 10%, rgba(249,250,251,0.92) 86%),
+    var(--overlay-detail),
     url('https://images.unsplash.com/photo-1505678261036-a3fcc5e884ee?auto=format&fit=crop&w=1200&q=80') center center / cover no-repeat;
   background-attachment: fixed;
   color: var(--ocean-dark);
+  text-shadow: 0 2px 8px #fff4, 0 1px 0 #23536744;
 }
 
 /* Ensure cards/popups are readable on busy backgrounds */
