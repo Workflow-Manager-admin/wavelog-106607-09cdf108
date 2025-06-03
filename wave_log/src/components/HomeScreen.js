@@ -1,5 +1,5 @@
 import React from "react";
-import { GiSurfboard } from "react-icons/gi";
+import { GiWaveSurfer } from "react-icons/gi";
 import { FaSwimmer } from "react-icons/fa";
 
 // PUBLIC_INTERFACE
@@ -20,7 +20,7 @@ function HomeScreen({
     <div className="surf-bg-home" style={{ borderRadius: 16, minHeight: "100vh" }}>
       <div className="action-bar">
         <button className="btn" onClick={goLog}>
-          <GiSurfboard /> Log New Session
+          <GiWaveSurfer /> Log New Session
         </button>
         <span className="text-faint" style={{ fontSize: "1.07rem" }}>
           <FaSwimmer style={{ verticalAlign: -2, marginRight: 3 }} />
