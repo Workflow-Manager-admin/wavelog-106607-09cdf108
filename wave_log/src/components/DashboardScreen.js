@@ -47,7 +47,7 @@ function DashboardScreen({ sessions, goHome }) {
     const keys = Object.keys(data);
     const percentLabels = Object.entries(data).map(([k, v], idx) => {
       const value = v;
-      // Find percent + arc mid angle
+      // Compute percent and arc midpoint angle
       let acc2 = 0;
       for (let i = 0; i < idx; i++) acc2 += Object.values(data)[i];
       const startF = acc2 / total;
@@ -115,9 +115,9 @@ function DashboardScreen({ sessions, goHome }) {
         <GiWaveSurfer /> Home
       </button>
       <div className="dashboard-summary">
-        <b>Total sessions:</b> {total}<br/>
-        <b>Most visited spot:</b> {mostCommon(sessions.map(s=>s.spot)) || "—"}<br/>
-        <b>Fav. board:</b> {mostCommon(sessions.map(s=>s.board)) || "—"}
+        <b>Total sessions:</b> {total}<br />
+        <b>Most visited spot:</b> {mostCommon(sessions.map(s => s.spot)) || "—"}<br />
+        <b>Fav. board:</b> {mostCommon(sessions.map(s => s.board)) || "—"}
       </div>
       <div className="dashboard-charts">
         <div>
@@ -135,13 +135,20 @@ function DashboardScreen({ sessions, goHome }) {
         <div>
           <div className="chart-title">Mood Over Time</div>
           {sessions.length === 0 ? <div>No data</div> :
-            <svg width="100%" height="65" style={{ background: "#eafafe", borderRadius: 7 }}>
+            <svg width="100%" height="65" style={{ background: "#1a6093cc", borderRadius: 9 }}>
               {sessions.slice(0, 12).map((s, i) => (
                 <text
-                  x={12 + i*28} y="39"
-                  fontSize="2em"
+                  x={18 + i * 28} y="40"
+                  fontSize="2.2em"
                   key={s.id}
-                  style={{ opacity: 0.93 }}
+                  fill="#fff"
+                  stroke="#225c97"
+                  strokeWidth="0.5"
+                  style={{
+                    opacity: 1,
+                    filter: 'drop-shadow(0 2px 8px #157087bb)'
+                  }}
+                  className="svg-dashboard-label"
                 >
                   {moodEmojis[s.mood] || "▪️"}
                 </text>
