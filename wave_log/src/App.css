@@ -43,11 +43,11 @@
 .surf-bg-dashboard {
   min-height: 100vh;
   background: 
-    var(--overlay-dashboard),
+    linear-gradient(180deg, rgba(32,113,185,0.90) 11%, rgba(243,245,249,1) 100%),
     url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80') center top / cover no-repeat;
   background-attachment: fixed;
-  color: var(--ocean-dark);
-  text-shadow: 0 1.5px 6px #fff7, 0 1px 0 #207ba944;
+  color: #102136;
+  text-shadow: 0 2.5px 14px #fff, 0 1.5px 4px #23456944, 0 1.5px 2px #16406f88;
 }
 .surf-bg-log {
   min-height: 100vh;
