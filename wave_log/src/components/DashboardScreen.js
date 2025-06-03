@@ -59,20 +59,48 @@ function DashboardScreen({ sessions, goHome }) {
       const xText = 60 + 33 * Math.sin(angle);
       const yText = 60 - 33 * Math.cos(angle);
       return (
-        <text
-          key={k + '-lbl'}
-          x={xText}
-          y={yText}
-          className="svg-dashboard-label"
-        >
-          {pct}%
-        </text>
+        <g key={k + "-lbl-group"}>
+          {/* semi-opaque background for text clarity */}
+          <rect
+            x={xText - 20}
+            y={yText - 14}
+            width="40"
+            height="23"
+            rx="7"
+            fill="rgba(19,51,95,0.80)"
+            stroke="#fff5"
+            strokeWidth="0.8"
+            filter="url(#label-bg-shadow)"
+          />
+          <text
+            x={xText}
+            y={yText}
+            className="svg-dashboard-label"
+            style={{
+              fill: "#fff",
+              fontWeight: 900,
+              fontSize: "1.30rem",
+              textShadow: "0 2px 10px #1de9b7,0 1px 0 #153969ad",
+              filter: "drop-shadow(0 2px 7px #1de9b7cc)"
+            }}
+            dominantBaseline="middle"
+            textAnchor="middle"
+          >
+            {pct}%
+          </text>
+        </g>
       );
     });
 
     return (
       <div style={{ display: "flex", alignItems: "center", gap: 17 }}>
         <svg width="120" height="120" style={{ flexShrink: 0 }}>
+          <defs>
+            {/* subtle drop shadow for label backgrounds */}
+            <filter id="label-bg-shadow" x="-40%" y="-40%" width="180%" height="180%">
+              <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#164575aa" />
+            </filter>
+          </defs>
           {arcs}
           {percentLabels}
         </svg>
@@ -82,17 +110,37 @@ function DashboardScreen({ sessions, goHome }) {
               key={k}
               className="dashboard-legend-label"
               style={{
-                color: colors[i % colors.length]
+                color: "#fff",
+                fontWeight: 900,
+                fontSize: "1.25em",
+                letterSpacing: "0.02em",
+                padding: "2.5px 5px",
+                marginBottom: "4px",
+                borderRadius: "8px",
+                background: "rgba(15,35,62,0.84)",
+                boxShadow: "0 2.5px 14px #1839446c, 0 1.5px 3.5px #fff6",
+                lineHeight: 1.4,
+                display: "inline-block",
+                minWidth: 0,
               }}
             >
               <span style={{
                 marginRight: 8,
                 fontSize: "1.10em",
                 verticalAlign: "-2px",
-                filter: `drop-shadow(0 0 3px #1A43a644)`
+                filter: `drop-shadow(0 0 4px #1DE9B6de)`
               }}>⬤
               </span>
-              {labels[k] || k}: <span style={{ fontWeight: 600 }}>{data[k]}</span>
+              <span
+                style={{
+                  fontWeight: 900,
+                  color: "#fff",
+                  letterSpacing: "0.01em"
+                }}
+              >
+                {labels[k] || k}:
+              </span>{" "}
+              <span style={{ fontWeight: 800, color: "#fff" }}>{data[k]}</span>
             </div>
           ))}
         </div>
