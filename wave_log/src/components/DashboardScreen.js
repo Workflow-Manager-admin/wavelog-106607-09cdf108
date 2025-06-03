@@ -43,16 +43,56 @@ function DashboardScreen({ sessions, goHome }) {
       const d = `M60,60 L${x1},${y1} A50,50 0 ${large} 1 ${x2},${y2} Z`;
       return <path key={k} d={d} fill={colors[idx % colors.length]} stroke="#fff" />;
     });
-    // For legend
+    // SVG Pie segment labels (show percentage if space)
     const keys = Object.keys(data);
+    const percentLabels = Object.entries(data).map(([k, v], idx) => {
+      const value = v;
+      // Find percent + arc mid angle
+      let acc2 = 0;
+      for (let i = 0; i < idx; i++) acc2 += Object.values(data)[i];
+      const startF = acc2 / total;
+      const endF = (acc2 + value) / total;
+      const angle = Math.PI * 2 * ((startF + endF) / 2);
+      const pct = Math.round((value / total) * 100);
+      // Only put label if big enough (at least 10%) and not too many slices
+      if (pct < 10 || keys.length > 8) return null;
+      const xText = 60 + 33 * Math.sin(angle);
+      const yText = 60 - 33 * Math.cos(angle);
+      return (
+        <text
+          key={k + '-lbl'}
+          x={xText}
+          y={yText}
+          className="svg-dashboard-label"
+        >
+          {pct}%
+        </text>
+      );
+    });
+
     return (
       <div style={{ display: "flex", alignItems: "center", gap: 17 }}>
-        <svg width="120" height="120">{arcs}</svg>
+        <svg width="120" height="120" style={{ flexShrink: 0 }}>
+          {arcs}
+          {percentLabels}
+        </svg>
         <div>
           {keys.map((k, i) => (
-            <div key={k} style={{ color: colors[i % colors.length], fontWeight: 500 }}>
-              <span style={{ marginRight: 8, fontSize: "1.1em" }}>⬤</span>
-              {labels[k] || k}: <span style={{fontWeight:400}}>{data[k]}</span>
+            <div
+              key={k}
+              className="dashboard-legend-label"
+              style={{
+                color: colors[i % colors.length]
+              }}
+            >
+              <span style={{
+                marginRight: 8,
+                fontSize: "1.10em",
+                verticalAlign: "-2px",
+                filter: `drop-shadow(0 0 3px #1A43a644)`
+              }}>⬤
+              </span>
+              {labels[k] || k}: <span style={{ fontWeight: 600 }}>{data[k]}</span>
             </div>
           ))}
         </div>
