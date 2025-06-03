@@ -68,25 +68,79 @@
   text-shadow: 0 2px 8px #fff4, 0 1px 0 #23536744;
 }
 
-/* Ensure cards/popups are readable on busy backgrounds */
-.surf-glass-card, .dashboard-card, .log-session-form, .session-detail-card, .session-card {
-  backdrop-filter: blur(2.5px);
-  background: rgba(245, 251, 255, 0.82);
+/* Ensure cards/popups are readable and accessible on busy backgrounds */
+.surf-glass-card,
+.dashboard-card,
+.log-session-form,
+.session-detail-card,
+.session-card {
+  /* Stronger blur and deeper, semi-opaque background */
+  backdrop-filter: var(--card-bg-blur);
+  -webkit-backdrop-filter: var(--card-bg-blur);
+  background: var(--card-bg-lightglass);
+  border-radius: 17px;
+  /* Add subtle border for separation on multi-tone backgrounds */
+  border: 1.5px solid rgba(42,110,160,0.09);
+  box-shadow: 0 2px 22px 0 #167dc031, 0 1.5px 8px #fff2;
+  /* For all text inside, sharp shadow for readability */
+  text-shadow: 0 1.5px 6px #34608a24, 0 1px 0 #fff5;
 }
 
-/* For home/hero card */
 .surf-glass-card {
-  box-shadow: 0 2px 12px #207baf42;
-  border-radius: 15px;
+  background: linear-gradient(117deg, var(--card-bg-darkglass) 65%, var(--card-bg-lightglass) 100%);
+  box-shadow: 0 3px 22px #207baf60, 0 1.5px 8px #25587924;
+  border-radius: 18px;
+  padding: 20px 18px 15px 18px;
 }
 
-/* Add override for strong card text contrast */
+/* Refined text & label contrast in card/row context */
 .surf-glass-card .spot,
 .session-detail-row .label,
-.dashboard-card .chart-title {
-  color: #206688 !important;
-  font-weight: 700;
+.dashboard-card .chart-title,
+.session-card .spot {
+  color: #165d8a !important;
+  font-weight: 800;
+  text-shadow: 0 1.5px 6px #fff8, 0 1px 0 #15547818;
 }
+
+.session-detail-row,
+.session-detail-card,
+.dashboard-summary,
+.chart-title,
+.session-details-row,
+.session-card .session-main,
+.session-card .surf-date,
+.log-session-form,
+.form-label,
+.reminder-bar,
+.action-bar,
+.filter-bar,
+.footer-btn,
+.nav-btn,
+.navbar,
+.text-accent {
+  /* General text, add subtle text-shadow for accessibility */
+  text-shadow: 0 1.5px 7px #fff4, 0 1px 0 #23536718;
+}
+
+.session-detail-mood,
+.session-mood {
+  text-shadow: 0 2px 7px #e2f8f760, 0 1px 0 #23536718;
+}
+
+.session-notes {
+  background: #eafffa;
+  color: #034769;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-style: italic;
+  font-size: 1.09rem;
+  box-shadow: 0 2px 7px #25e9bc1a;
+  text-shadow: 0 1.5px 6px #fff7, 0 1px 0 #326d9888;
+}
+
 
 .ocean-nav {
   background: var(--primary);
