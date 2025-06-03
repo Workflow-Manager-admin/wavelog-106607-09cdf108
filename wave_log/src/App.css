@@ -294,49 +294,60 @@ main {
 }
 
 .session-card {
-  background: #fff6;
+  background: linear-gradient(107deg, rgba(255,255,255,0.83) 62%, rgba(216,236,251,0.74) 100%);
   color: var(--ocean-dark);
-  border-radius: 18px;
-  padding: 18px 14px 12px 14px;
-  box-shadow: 0 2px 14px #2c93b220;
+  border-radius: 20px;
+  padding: 20px 15px 13px 18px;
+  box-shadow: 0 2px 22px #883ab920, 0 0.5px 6px #2c93b218;
   display: flex;
   gap: 18px;
   align-items: flex-start;
   cursor: pointer;
   position: relative;
   transition: background 0.14s;
+  border: 1.5px solid rgba(42,110,160,0.06);
+  /* For screens with image overlaid, add local blur for better card readings */
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
 }
 .session-card:hover {
-  background: #c2f6edb4;
+  background: linear-gradient(118deg, #e0f9f7c2 52%, #fffdea9e 120%);
 }
+
 .session-card .session-main {
   flex: 1;
 }
 .session-card .spot {
   font-weight: bold;
-  font-size: 1.1rem;
-  color: var(--primary);
+  font-size: 1.13rem;
+  color: #2075be;
+  text-shadow: 0 2px 8px #fff9, 0 1px 0 #3b749833;
 }
+
 .session-details-row {
   margin-top: 3px;
   display: flex;
   gap: 16px;
   align-items: center;
-  font-size: 0.96rem;
+  font-size: 0.99rem;
+  color: #185376;
+  text-shadow: 0 1.5px 7px #fff4, 0 1px 0 #23536718;
 }
 .session-mood {
-  font-size: 1.2rem;
-  margin-right: 4px;
+  font-size: 1.24rem;
+  margin-right: 5px;
   vertical-align: -2px;
+  text-shadow: 0 2.5px 15px #9ff0e170, 0 1px 0 #32556125;
 }
 .session-card .surf-date {
   position: absolute;
   right: 18px;
-  top: 11px;
-  color: var(--ocean-dark);
-  font-size: 0.93rem;
-  font-weight: 500;
-  opacity: 0.9;
+  top: 12px;
+  color: #2173a7;
+  font-size: 0.97rem;
+  font-weight: 600;
+  opacity: 0.93;
+  text-shadow: 0 1.5px 6px #fff5, 0 1px 0 #174c6d26;
 }
 
 .action-bar {
