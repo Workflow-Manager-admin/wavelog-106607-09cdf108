@@ -70,9 +70,9 @@ function DashboardScreen({ sessions, goHome }) {
   };
 
   return (
-    <div className="dashboard-card">
-      <button className="btn" style={{ position: "absolute", left: 16, top: 18, fontSize: "0.95rem" }} onClick={goHome}>
-        <FaArrowLeft /> Home
+    <div className="dashboard-card surf-bg-dashboard">
+      <button className="btn" style={{ position: "absolute", left: 16, top: 18, fontSize: "0.99rem" }} onClick={goHome}>
+        <GiWaveSurfer /> Home
       </button>
       <div className="dashboard-summary">
         <b>Total sessions:</b> {total}<br/>
